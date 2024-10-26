@@ -1023,7 +1023,7 @@ textarea {
 }
 
 .bg-overlay-secondary:before {
-  background-color: rgba(33, 51, 96, 0.93);
+  background-color: rgb(3 49 46);
 }
 
 .bg-overlay-primary:before {
@@ -3976,6 +3976,64 @@ input[type=radio] {
 .slider-centerd .slide__desc {
   margin-right: auto;
   margin-left: auto;
+}
+
+.slider .boxes-wrapper {
+  position: relative;
+  z-index: 3;
+  margin-top: -40px;
+  overflow: hidden;
+}
+.slider .boxes-wrapper > [class*=col-]:nth-of-type(1) .contact-box {
+  background-color: #21965B;
+}
+.slider .boxes-wrapper > [class*=col-]:nth-of-type(2) .contact-box {
+  background-color: #3851a2;
+}
+.slider .boxes-wrapper > [class*=col-]:nth-of-type(3) .contact-box {
+  background-color: #2d4990;
+}
+.slider .contact-box {
+  position: relative;
+  padding: 25px;
+  height: 100%;
+  background-color: #21965B;
+  border-radius: 10px;
+  text-align: center;
+}
+.slider .contact-box .contact__title {
+  font-size: 25px;
+}
+.slider .contact-box .contact__icon {
+  font-size: 50px;
+  flex: 0 0 80px;
+  max-width: 80px;
+}
+.slider .contact-box .contact__title,
+.slider .contact-box .contact__icon,
+.slider .contact-box .time__list li,
+.slider .contact-box .contact__desc {
+  color: #ffffff;
+}
+.slider .contact-box .phone__number {
+  font-size: 23px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #ffffff !important;
+}
+.slider .contact-box .phone__number .icon-phone {
+  font-size: 17px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 10px;
+  background-color: #1ebaae;
+}
+.slider .contact-box .btn__white.btn__outlined {
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 @media (min-width: 1200px) {
