@@ -5570,8 +5570,7 @@ textarea.form-control {
   padding: 55px 60px;
   border-radius: 20px;
   overflow: hidden;
-  flex: 0 0 38%;
-  max-width: 38%;
+  text-align: center;
 }
 .contact-layout1 .contact-panel__info:after,
 .contact-layout2 .contact-panel__info:after {
