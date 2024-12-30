@@ -2102,6 +2102,9 @@ input[type=radio] {
   font-weight: 700;
   margin-bottom: 9px;
 }
+.list-items li span{
+  font-weight: 400;
+}
 .list-items li:before {
   content: "\f00c";
   font-family: "Font Awesome 5 Free";
@@ -5741,6 +5744,7 @@ textarea.form-control {
 .pricing-package .package__list li {
   margin-bottom: 13px;
 }
+
 .pricing-package .package__list li:before {
   width: 22px;
   height: 22px;
