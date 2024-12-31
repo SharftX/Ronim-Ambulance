@@ -4128,9 +4128,7 @@ input[type=radio] {
   .slider .slick-arrow {
     display: none;
   }
-  .slider .slide-item {
-    padding: 30px 10px;
-  }
+
 }
 /*--------------------------
       Video
