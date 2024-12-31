@@ -4129,7 +4129,7 @@ input[type=radio] {
     display: none;
   }
   .slider .slide-item {
-    padding: 30px 10px;
+    padding: 100px 10px;
   }
 }
 /*--------------------------
