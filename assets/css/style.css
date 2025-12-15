@@ -3729,7 +3729,7 @@ input[type=radio] {
   margin-right: 0;
 }
 .footer .phone__number {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .phone__number {
@@ -3737,7 +3737,7 @@ input[type=radio] {
   align-items: center;
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 25px;
   line-height: 1;
   color: #3851a2 !important;
 }
@@ -3748,6 +3748,11 @@ input[type=radio] {
   margin-right: 7px;
 }
 
+.phone__number p{
+  margin-bottom: 0;
+  line-height: 1;
+  font-size: 20px;
+}
 /* Scroll Top Button */
 #scrollTopBtn {
   position: fixed;
@@ -3810,7 +3815,9 @@ input[type=radio] {
   }
   .footer .phone__number {
     margin: 10px 0;
+    font-size: 22px;
   }
+
 }
 /* Mobile Phones */
 @media (min-width: 320px) and (max-width: 767px) {
@@ -5518,7 +5525,7 @@ input[type=radio] {
   color: #ffffff;
 }
 .contact-info .contact-box .phone__number {
-  font-size: 23px;
+  font-size: 25px;
   margin-top: 5px;
   font-weight: 600;
   color: #ffffff !important;
