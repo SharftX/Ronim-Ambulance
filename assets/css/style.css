@@ -3817,6 +3817,9 @@ input[type=radio] {
     margin: 10px 0;
     font-size: 22px;
   }
+  .phone__number p{
+    line-height: auto;
+  }
 
 }
 /* Mobile Phones */
