@@ -3818,7 +3818,7 @@ input[type=radio] {
     font-size: 22px;
   }
   .phone__number p{
-    line-height: auto;
+    line-height: 0.5;
   }
 
 }
