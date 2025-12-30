@@ -5578,6 +5578,7 @@ textarea.form-control {
   border-radius: 20px;
   overflow: hidden;
   text-align: center;
+  flex: 0 0 38%;
 }
 .contact-layout1 .contact-panel__info:after,
 .contact-layout2 .contact-panel__info:after {
