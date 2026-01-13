@@ -3674,6 +3674,30 @@ input[type=radio] {
   text-transform: capitalize;
   margin-bottom: 30px;
 }
+.footer-widget-nav span{
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-family: "Quicksand", sans-serif;
+  text-transform: capitalize;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.footer-widget-nav nav{
+  margin-top: 30px;
+}
+
+.footer-widget-contact span{
+  text-transform: capitalize;
+  font-family: "Quicksand", sans-serif;
+  text-transform: capitalize;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.footer-quick{
+  margin-bottom: 30px;
+}
 .footer .contact-list li {
   line-height: 26px;
   margin-bottom: 0;
@@ -5724,7 +5748,7 @@ textarea.form-control {
 }
 .pricing-package .package__title {
   color: #21965B;
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 15px;
 }
 .pricing-package .package__price {
