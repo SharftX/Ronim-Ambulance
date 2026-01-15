@@ -4631,9 +4631,7 @@ input[type=radio] {
 .fancybox-layout3 .fancybox-item .fancybox__icon {
   flex: 0 0 70px;
 }
-.fancybox-layout3 .fancybox-item .fancybox__title {
-  font-size: 18px;
-}
+
 
 .fancybox-light .fancybox-item .fancybox__icon,
 .fancybox-light .fancybox-item .fancybox__title,
@@ -4693,6 +4691,15 @@ input[type=radio] {
 }
 .member .member__info {
   padding: 35px 40px;
+}
+.branch-info{
+  color: #038A46;
+  font-family: "Quicksand", sans-serif;
+  text-transform: capitalize;
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 21px;
+  margin-bottom: 11px
 }
 .member .member__info .member__name {
   font-size: 21px;
@@ -5538,7 +5545,7 @@ input[type=radio] {
   height: 100%;
 }
 .contact-info .contact-box .contact__title {
-  font-size: 19px;
+  font-size: 24px;
 }
 .contact-info .contact-box .contact__icon {
   font-size: 50px;
@@ -6762,7 +6769,6 @@ textarea.form-control {
   transform: scaleX(0);
 }
 .services-layout2 .service-item .service__title {
-  font-size: 23px;
   margin-bottom: 16px;
 }
 .services-layout2 .service-item .service__img {
