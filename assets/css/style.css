@@ -271,7 +271,7 @@ textarea {
   min-width: 170px !important;
 }
 
-.z-index-2 {
+.z-ronim nursing {
   z-index: 2 !important;
 }
 
@@ -3909,6 +3909,9 @@ input[type=radio] {
   margin-bottom: 25px;
   text-align: left;
 }
+.contact-us-slider .slide__title {
+  font-size: 50px;
+}
 .slider .slide__desc {
   color: #03312E;
   font-size: 17px;
@@ -7469,7 +7472,7 @@ textarea.form-control {
   visibility: hidden;
 }
 .work-process .cta {
-  padding-top: 140px;
+  padding-top: 70px;
   padding-bottom: 70px;
   margin-top: -70px;
 }
@@ -7483,6 +7486,12 @@ textarea.form-control {
 }
 .work-process .cta .btn:not(.btn__link) {
   height: 50px;
+}
+.contact .cta .cta__title{
+  color: #038A46;
+}
+.contact .cta .cta__desc{
+  color: #848e9f;
 }
 
 @media (min-width: 1500px) {
