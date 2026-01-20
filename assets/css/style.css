@@ -7489,10 +7489,12 @@ textarea.form-control {
 }
 .contact .cta .cta__title{
   color: #038A46;
+  font-size: 40px;
 }
 .contact .cta .cta__desc{
   color: #848e9f;
 }
+
 
 @media (min-width: 1500px) {
   .work-process .carousel-container {
