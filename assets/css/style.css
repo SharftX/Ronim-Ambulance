@@ -7748,3 +7748,9 @@ textarea.form-control {
   right: 0;
   color: #848e9f;
 }/*# sourceMappingURL=style.css.map */
+
+
+/* special requirement */
+.text-p-color{
+  color: #03312E;
+}
