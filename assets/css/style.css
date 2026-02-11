@@ -1092,6 +1092,15 @@ h6 {
   font-size: 15px;
   color: #435ba1;
   margin-bottom: 12px;
+  font-weight: 700;
+}
+.heading__subtitle--span {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-bottom: 12px;
+  display: block;
+  font-weight: 700;
+  text-transform: capitalize;
 }
 
 .heading__title {
@@ -3933,6 +3942,16 @@ input[type=radio] {
   margin-bottom: 25px;
   text-align: left;
 }
+.slide__title--span {
+  font-size: 75px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  text-align: left;
+  display: block;
+  color: #038A46;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
 .contact-us-slider .slide__title {
   font-size: 50px;
 }
@@ -4323,7 +4342,7 @@ input[type=radio] {
   transition: all 0.5s linear;
 }
 .feature-item .feature__title {
-  font-size: 18px;
+  font-size: 24px;
   margin-bottom: 0;
 }
 .feature-item .feature__desc {
@@ -4705,7 +4724,7 @@ input[type=radio] {
   margin-bottom: 11px
 }
 .member .member__info .member__name {
-  font-size: 21px;
+  font-size: 24px;
   margin-bottom: 11px;
 }
 .member .member__info .member__name a {
@@ -5105,7 +5124,7 @@ input[type=radio] {
   transition: all 0.9s ease;
 }
 .post-item .post__title {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 28px;
 }
 .post-item .post__title a {
@@ -5806,6 +5825,15 @@ textarea.form-control {
   font-family: "Quicksand", sans-serif;
   color: #ffffff;
 }
+.testimonial__meta-title--span-light {
+  font-size: 16px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  display: block;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  color: #038A46;
+}
 
 /*--------------------------
         pricing
@@ -6485,19 +6513,48 @@ textarea.form-control {
   line-height: 1;
   margin-bottom: 10px;
 }
+.about-layout3 .experience__years--span {
+  font-size: 160px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 10px;
+  display: block;
+}
 .about-layout3 .experience__text {
   font-size: 16px;
+}
+.about-layout3 .experience__text--span {
+  font-size: 16px;
+  display: block;
 }
 .about-layout3 .text__icon {
   font-size: 65px;
   color: #21965B;
 }
 
-.about-layout5 .list-items li {
-  padding-left: 30px;
-  line-height: 1.7;
-  margin-bottom: 14px;
+
+.about-layout3 .experience__text {
+  font-size: 16px;
 }
+/* Span equivalents for the experience numbers and text (used when headings replaced by spans) */
+.about-layout3 .experience__years--span {
+  font-size: 160px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 10px;
+  display: block;
+  font-family: quicksand, sans-serif;
+}
+.about-layout3 .experience__text--span {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 2px;
+  font-family: quicksand, sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+
 .about-layout5 .list-items li:before {
   top: 3px;
   font-size: 14px;
@@ -6800,7 +6857,7 @@ textarea.form-control {
   top: 100px;
 }
 .service-item .service__title {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 31px;
   transition: all 0.3s linear;
 }
