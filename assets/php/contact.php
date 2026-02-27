@@ -1,14 +1,25 @@
 <?php
 require("PHPMailer/PHPMailerAutoload.php");
+require("db_config.php"); // Load database configuration
+
+// Temporarily enable error reporting for debugging
+if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' || $_SERVER['REMOTE_ADDR'] == '::1') {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+} else {
+    error_reporting(0);
+    ini_set('display_errors', 0);
+}
 
 // ========== HOSTINGER SMTP CONFIGURATION ==========
-// For Hostinger, use your cPanel email credentials
-$smtpHost = 'smtp.hostinger.com';           // Or your domain's mail server
+// For Hostinger, it's BEST to create a business email (e.g., info@ronim.lk) 
+// in your hPanel and use its credentials here instead of your personal Gmail.
+$smtpHost = 'smtp.hostinger.com';           
 $smtpPort = 587;
-$smtpUser = 'chathukarandils@gmail.com';    // Your email (can be Gmail or Hostinger email)
-$smtpPass = 'your-email-password';          // Your email password
-$recipientEmail = 'chathukarandils@gmail.com';
-$recipientName = 'Chathuka Siriwardana';
+$smtpUser = 'ronimweb@gmail.com';    // Replace with your Hostinger Business Email
+$smtpPass = 'Ronimweb@2025';          // Replace with your Email App Password
+$recipientEmail = 'ronimweb@gmail.com';
+$recipientName = 'Ronim Ambulance';
 
 // ========== FORM DATA COLLECTION ==========
 $senderName = isset($_POST['contact-name']) ? trim($_POST['contact-name']) : '';
@@ -40,6 +51,30 @@ $message .= "<tr><td colspan='2'><strong>Message:</strong><br/>" . nl2br(htmlspe
 $message .= "</table>";
 $message .= "</body></html>";
 
+// ========== DATABASE STORAGE ==========
+try {
+    $conn = connectToDatabase();
+    
+    // Prepare SQL statement to prevent SQL injection
+    $stmt = $conn->prepare("INSERT INTO contact_submissions (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)");
+    if (!$stmt) {
+        throw new Exception("Prepare failed: " . $conn->error);
+    }
+    
+    $stmt->bind_param("sssss", $senderName, $senderEmail, $senderPhone, $senderSubject, $senderMessage);
+    
+    if (!$stmt->execute()) {
+        throw new Exception("Execute failed: " . $stmt->error);
+    }
+    
+    $stmt->close();
+    $conn->close();
+} catch (Exception $e) {
+    // For debugging, echo the error. In production, you might want to only log it.
+    echo '<div class="alert alert-warning" role="alert">Database Error: ' . htmlspecialchars($e->getMessage()) . '</div>';
+    error_log("Database Connection/Insertion Error: " . $e->getMessage());
+}
+
 // ========== SEND EMAIL USING PHPMAILER ==========
 try {
     $mail = new PHPMailer();
@@ -52,6 +87,7 @@ try {
     $mail->Password = $smtpPass;
     $mail->SMTPSecure = 'tls';
     $mail->Port = $smtpPort;
+    $mail->Timeout = 10; // Set timeout to 10 seconds
     
     // Email Details
     $mail->setFrom($smtpUser, 'Ronim Ambulance');

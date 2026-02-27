@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /test/
+Disallow: /.DS_Store
+
+Sitemap: https://ronimambulance.lk/sitemap.xml
+Sitemap: https://ronimambulance.lk/image-sitemap.xml

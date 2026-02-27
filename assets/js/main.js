@@ -216,16 +216,23 @@ $(function () {
     contactForm.validate({
         debug: false,
         submitHandler: function (contactForm) {
-            $(contactResult, contactForm).html('Please Wait...');
+            $(contactResult).html('Please Wait...');
             $.ajax({
                 type: "POST",
                 url: "assets/php/contact.php",
                 data: $(contactForm).serialize(),
                 timeout: 20000,
                 success: function (msg) {
-                    $(contactResult, contactForm).html('<div class="alert alert-success" role="alert"><strong>Thank you. We will contact you shortly.</strong></div>').delay(3000).fadeOut(2000);
+                    $(contactResult).html(msg).fadeIn(500);
+                    // Reset form on success
+                    if (msg.indexOf('alert-success') !== -1) {
+                        $(contactForm)[0].reset();
+                        $(contactResult).delay(5000).fadeOut(2000);
+                    }
                 },
-                error: $('.thanks').show()
+                error: function (xhr, status, error) {
+                    $(contactResult).html('<div class="alert alert-danger" role="alert">Error: ' + error + '. Please check your connection.</div>');
+                }
             });
             return false;
         }
