@@ -3,21 +3,27 @@ require("PHPMailer/PHPMailerAutoload.php");
 require("db_config.php"); // Load database configuration
 
 // Temporarily enable error reporting for debugging
-if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' || $_SERVER['REMOTE_ADDR'] == '::1') {
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-} else {
-    error_reporting(0);
-    ini_set('display_errors', 0);
-}
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// ========== HOSTINGER SMTP CONFIGURATION ==========
-// For Hostinger, it's BEST to create a business email (e.g., info@ronim.lk) 
-// in your hPanel and use its credentials here instead of your personal Gmail.
+// ========== EMAIL CONFIGURATION ==========
+// OPTION A: HOSTINGER EMAIL (Recommended - Works with real password)
+// Create an email like info@yourdomain.com in Hostinger hPanel
 $smtpHost = 'smtp.hostinger.com';           
-$smtpPort = 587;
-$smtpUser = 'ronimweb@gmail.com';    // Replace with your Hostinger Business Email
-$smtpPass = 'Ronimweb@2025';          // Replace with your Email App Password
+$smtpPort = 465;                            // Use 465 for SSL
+$smtpUser = 'ronimweb@gmail.com';           // REPLACE with your new email
+$smtpPass = 'Ronimweb@2025';                // REPLACE with your real password
+$smtpSecure = 'ssl';                        // Use 'ssl' for 465 or 'tls' for 587
+
+/* 
+// OPTION B: GMAIL (Requires "App Password" - Regular password will NOT work)
+$smtpHost = 'smtp.gmail.com';               
+$smtpPort = 465;                            
+$smtpUser = 'your-gmail@gmail.com';           
+$smtpPass = 'xxxx-xxxx-xxxx-xxxx';          // MUST be a 16-digit App Password
+$smtpSecure = 'ssl';
+*/
+
 $recipientEmail = 'ronimweb@gmail.com';
 $recipientName = 'Ronim Ambulance';
 
@@ -81,11 +87,12 @@ try {
     
     // SMTP Configuration
     $mail->isSMTP();
+    $mail->SMTPDebug = 2; // Enable SMTP debug for troubleshooting
     $mail->Host = $smtpHost;
     $mail->SMTPAuth = true;
     $mail->Username = $smtpUser;
     $mail->Password = $smtpPass;
-    $mail->SMTPSecure = 'tls';
+    $mail->SMTPSecure = $smtpSecure; // Using the variable from config
     $mail->Port = $smtpPort;
     $mail->Timeout = 10; // Set timeout to 10 seconds
     
